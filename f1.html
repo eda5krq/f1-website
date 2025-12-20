@@ -234,6 +234,7 @@ li a {
 
 <body>
  <audio id="radio" src="car-engine-372477.mp3"></audio>
+ <audio id="max" src="MAX Verstappen Song (mp3cut.net).mp3"></audio>
   <div class="intro" id="intro">
     <div class="logo" id="logo">
       <button type="button" class="button">
@@ -251,7 +252,7 @@ li a {
   <div class="main-content" id="main">
    
    <ul class="navbar">
-      <li class="redbull"><a href="#RedBullRacing"><img src="redbull.png" width="60" alt="Red Bull Racing"></a></li>
+      <li class="redbull"><a id="redbullLink" href="redbull.html"><img src="redbull.png" width="60" alt="Red Bull Racing"></a></li>
       <li class="mercedes"><a href="#Mercedes-Benz"><img src="Mercedes-Logo.svg.webp" width="50" alt="Mercedes-Benz"></a></li>
       <li class="ferrari"><a href="#Ferrari"><img src="ferrari.png" width="50" alt="Ferrari"></a></li>
       <li class="mclaren"><a href="#McLaren"><img src="mclaren.png" width="100" alt="McLaren"></a></li>
@@ -275,6 +276,14 @@ li a {
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    const link = document.getElementById('redbullLink');
+  const audio = document.getElementById('max');
+
+  link.addEventListener('click', async (e) => {
+    e.preventDefault(); // stop immediate navigation [web:173]
+    try { await audio.play(); } catch (err) { /* ignore */ } // play() returns a Promise [web:176]
+    setTimeout(() => { window.location.href = link.href; }, 8000);
+  });
 $(document).ready(function () {
   const $logo = $('#logo');
   const $img = $logo.find('img');
