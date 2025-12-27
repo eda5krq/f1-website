@@ -4,9 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>F1 Museum®</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
+   
+<link rel="stylesheet" href="style.css">
+
+  
+ 
+ 
+ <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+  font-family: "Designer", sans-serif;
+}
+
+    body {
+      margin: 0;
+    }
+
+    .hero {
+      min-height: 100vh; /* e mbush ekranin */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(16px, 4vw, 48px);
+      position: relative;
+
+      background: url("./assets/bg-f1.jpg") center/cover no-repeat;
+    }
+
     ul {
   list-style-type: none;
   margin: 0;
@@ -15,6 +45,7 @@
   
     }
     li{float: left;}
+
 
 
 li a {
@@ -29,9 +60,9 @@ li a {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 30px;
+      gap: 10px;
       font-size: 18px;
-      font-family: Orbitron, sans-serif;
+       font-family: "Designer", sans-serif;
     }
 
 .navbar li a {
@@ -69,7 +100,7 @@ li a {
       position: relative;
       overflow-x: hidden;
       overflow-y: auto;
-      
+      font-family: "Designer", sans-serif;
 
     }
 
@@ -138,7 +169,7 @@ li a {
       text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
       transition: all 0.5s ease;
       animation:fadeinopacity 2s ease forwards;
-      font-family: "orbitron", sans-serif;
+      font-family: "Designer", sans-serif;
     }
     .paragraph:hover{
       transform: scale(1.03);
@@ -175,7 +206,7 @@ li a {
   text-align: center;
   animation: fadeInOpacity 2s ease forwards;
   animation-delay: 2s;
-    font-family: "Orbitron", sans-serif;
+     font-family: "Designer", sans-serif;
 
   
 }
@@ -218,10 +249,7 @@ li a {
   }
  
 } 
- @font-face {
-    font-family: HungerGames;
-    src: url(C:\Users\Dion\Documents\GitHub\f1-website\hunger_games\HungerGames.ttf);
-  }
+ 
     .button {
       background: none;
       border: none;
@@ -234,7 +262,7 @@ li a {
 
 <body>
  <audio id="radio" src="car-engine-372477.mp3"></audio>
- <audio id="max" src="MAX Verstappen Song (mp3cut.net).mp3"></audio>
+ 
   <div class="intro" id="intro">
     <div class="logo" id="logo">
       <button type="button" class="button">
@@ -243,10 +271,10 @@ li a {
     </div>
 
     <div class="paragraph">
-      <p>Welcome to the F1 Museum</p>
+    
     </div>
   </div>
-
+   
 
   
   <div class="main-content" id="main">
@@ -262,17 +290,52 @@ li a {
       <li class="astonmartin"><a href="#AstonMartin"><img src="astonmartin.png" width="100" alt="Aston Martin"></a></li>
       <li class="haas"><a href="#Haas"><img src="haas.png" width="75" alt="Haas"></a></li>
       <li class="racingbulls"><a href="#RacingBulls"><img src="racingbulls.png" width="50" alt="Racing Bulls"></a></li>
-            <li class="home"><a href="Home-page">Menu</a></li>
-
+          
           </ul>
+             <button class="menu-btn" id="menuBtn">MENU</button>
 
-        <div class="content-container">
-      <div class="content-text">
-          <p>WELCOME TO THE F1 MUSEUM</p>
-        </div>
-        <p>Ta kshyrmi a po bon</p>
-      </div>
-        </div>
+<!-- menu -->
+<div class="menu-dropdown" id="menuDropdown">
+  
+  
+</div>
+       
+       
+          <section id="home" class="homeHero">
+    <div class="homeHero__overlay"></div>
+
+    <div class="homeHero__content">
+      <h1 class="homeTitle">WELCOME TO THE F1 MUSEUM</h1>
+    </div>
+  </section>
+
+   <section id="cardsSection" class="cardsSection">
+  <div class="cardsGrid">
+    <a class="card" href="standings.html">
+      <span class="card__icon"></span>
+      <span class="card__text">STANDINGS</span>
+    </a>
+
+    <a class="card" href="news.html">
+      <span class="card__icon"></span>
+      <span class="card__text">LATEST NEWS</span>
+    </a>
+
+    <a class="card" href="videos.html">
+      <span class="card__icon"></span>
+      <span class="card__text">LATEST VIDEOS</span>
+    </a>
+
+    <a class="card" href="timings.html">
+      <span class="card__icon">
+      </span>
+      <span class="card__text">TIMINGS</span>
+    </a>
+  </div>
+</section>
+
+
+
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -334,6 +397,22 @@ $(document).ready(function () {
 
 });
 </script>
+ 
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("cardsSection")?.classList.remove("hidden");
+  });
+</script>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  menuBtn.addEventListener("click", () => {
+    menuDropdown.classList.toggle("show");
+  });
+</script>
+
 
 
  
