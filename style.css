@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 :root{
   --bg:#070b12;
   --panel: rgba(10, 14, 22, 0.72);
@@ -29,7 +32,11 @@ body{
   background:
     radial-gradient(1200px 600px at 20% 30%, rgba(168,85,247,0.18), transparent 60%),
     radial-gradient(900px 500px at 80% 40%, rgba(59,130,246,0.12), transparent 60%),
+<<<<<<< Updated upstream
    
+=======
+    url("../assets/bg-f1.jpg") center/cover no-repeat;
+>>>>>>> Stashed changes
 }
 
 .hero__overlay{
@@ -138,8 +145,11 @@ body{
   display:block;
   text-decoration:none;
   color:inherit;
+<<<<<<< Updated upstream
   transition: all 0.3s ease
 
+=======
+>>>>>>> Stashed changes
 }
 .race img{
   width:100%;
@@ -167,7 +177,11 @@ body{
   font-size: 12px;
   color: var(--muted);
 }
+<<<<<<< Updated upstream
 .race:hover{ transition: all 0.3s ease; transform: scale(1.03); }
+=======
+.race:hover{ transform: translateY(-2px); transition: 160ms; }
+>>>>>>> Stashed changes
 
 .right{
   display:flex;
@@ -476,10 +490,16 @@ li a {
  
 } 
  @font-face {
+<<<<<<< Updated upstream
   font-family: 'HungerGames';
   src: url('./fonts/HungerGames.ttf') format('truetype');
 }
 
+=======
+    font-family: HungerGames;
+    src: url(C:\Users\Dion\Documents\GitHub\f1-website\hunger_games\HungerGames.ttf);
+  }
+>>>>>>> Stashed changes
     .button {
       background: none;
       border: none;

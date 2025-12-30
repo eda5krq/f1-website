@@ -28,6 +28,7 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000 * 10);
+const targetDate = new Date("2026-05-26T14:00:00");
 
 function pad2(n) {
   return String(n).padStart(2, "0");
@@ -49,18 +50,16 @@ function updateCountdown() {
   const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
   const minutes = totalMinutes % 60;
 
-  //document.getElementById("days").textContent = pad2(days);
-  //document.getElementById("hours").textContent = pad2(hours);
-  //document.getElementById("minutes").textContent = pad2(minutes);
+  document.getElementById("days").textContent = pad2(days);
+  document.getElementById("hours").textContent = pad2(hours);
+  document.getElementById("minutes").textContent = pad2(minutes);
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000 * 10); 
 $(document).ready(function () {
-  console.log('Document is ready');
   const $logo = $('#logo');
   const $img = $logo.find('img');
-  console.log('Imazhi' + $img);
   const $text = $('.paragraph');
   const $intro = $('#intro');
   const $main = $('#main');
@@ -73,18 +72,12 @@ $(document).ready(function () {
   $text.addClass('animate-text-fade-in');
 
   // When logo image is clicked
-  $logo.on('click', function () {
-    console.log('Logo clicked');
+  $img.on('click', function () {
     if ($audio.length) {
-      console.log('Playing audio');
       const playPromise = $audio[0].play();
       if (playPromise !== undefined) {
         playPromise.catch(err => console.warn('Audio play failed:', err));
       }
-      $audio[0].onended = function () {
-      console.log('Audio finished, redirecting...');
-      window.location.href = 'homepage.html';
-    };
     }
 
     $('body').addClass('gradient-active');
@@ -111,4 +104,5 @@ $(document).ready(function () {
         });
     });
   }
-  });
+
+});
