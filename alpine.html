@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BWT Alpine F1 Team | Rise of the Blue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link type="image/x-icon" rel="icon" href="Alpine-logo.png"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: lightblue;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+                  url('images/alpine-hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin-top: 15px;
+      color: #cfd8ff;
+    }
+    header div {
+      transition: transform 0.3s ease;
+    }
+    header div:hover {
+      transform: scale(1.03);
+    }
+    section {
+      padding: 80px 8%;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      border-left: 6px solid #0090ff;
+      padding-left: 15px;
+    }
+    section-title h2{
+        text-align: left;
+    }
+    .about p {
+      max-width: 900px;
+      font-size: 1.1rem;
+      color: black;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .grid img {
+      width: 100%;
+      border-radius: 14px;
+    }
+    .timeline {
+      background: #11162c;
+    }
+    .timeline-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    .milestone {
+      background: #1a2040;
+      padding: 30px;
+      border-radius: 14px;
+      border-top: 4px solid #0090ff;
+         transition: all 0.3s ease;
+    }
+    .milestone h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+    .milestone p {
+      color: #cfd8ff;
+    }
+    .milestone:nth-child(odd) {
+      border-top-color: pink;
+    }
+    .milestone:hover {
+      transform: scale(1.03);
+      transition: all 0.3s ease;
+    }
+    .driver-card {
+      background: #1a2040;
+      padding: 30px;
+      border-radius: 16px;
+      text-align:center;
+      transition: all 0.3s ease;
+    }
+    .driver-card:hover {
+      transform: scale(1.03);
+    }
+    .driver-card h3 {
+      margin-top: 15px;
+      font-size: 1.4rem;
+    }
+    footer {
+      background: #050812;
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aab2ff;
+    }
+    #back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      background: transparent;
+      color: #fff;
+      border: solid 2px white;
+        border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #back:hover {
+      background: #0090ff;
+      border-color: #0090ff;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <button type="button" id="back" onclick="location.href='homepage.html'">← Back to Home</button>
+  <div>
+    <h1>BWT <span style="color: pink;">ALPINE</span> F1 TEAM</h1>
+    <p>French Heritage. Formula One Ambition.</p>
+  </div>
+</header>
+
+<section class="about">
+  <h2 class="section-title">Team Origins</h2>
+  <p>
+    The BWT Alpine F1 Team represents the return of the iconic French manufacturer Alpine to Formula 1.
+    Officially rebranded in 2021, Alpine traces its roots through Renault, Benetton, and Toleman — one of the most historic lineages in the sport.
+    Backed by Renault Group, Alpine blends racing heritage with modern performance.
+  </p>
+  <div class="grid">
+    <div class="sketchfab-embed-wrapper">
+        <iframe width="560" height="315" title="F1 2025 - BWT Alpine A525" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/136c818e41bf475595034b487d659c64/embed">
+         </iframe></div>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/GuCe_3uVek4?si=fbPv-MYX8DLbqjb-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+   </iframe>
+  </div>
+</section>
+
+<section class="timeline">
+  <h2 class="section-title">Key Milestones</h2>
+  <div class="timeline-container">
+    <div class="milestone">
+      <h3>1977</h3>
+      <p>Renault introduces turbo engines to Formula 1.</p>
+    </div>
+    <div class="milestone">
+      <h3>2005–2006</h3>
+      <p>Renault wins back-to-back World Championships with Fernando Alonso.</p>
+    </div>
+    <div class="milestone">
+      <h3>2021</h3>
+      <p>Alpine F1 Team debuts, winning the Hungarian Grand Prix.</p>
+    </div>
+    <div class="milestone">
+      <h3>2022–Present</h3>
+      <p>Alpine fights consistently in the midfield, targeting podiums and growth.</p>
+    </div>
+  </div>
+</section>
+
+<section class="drivers">
+  <h2 class="section-title">Drivers & Champions</h2>
+  <div class="grid">
+    <div class="driver-card">
+      <img src="fernando.png" alt="Fernando Alonso">
+      <h3>Fernando Alonso</h3>
+      <p>Two-time World Champion (Renault)</p>
+    </div>
+    <div class="driver-card">
+      <img src="esteban.png" alt="Esteban Ocon">
+      <h3>Esteban Ocon</h3>
+      <p>Hungarian GP Winner • French Talent</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Cars</h2>
+ <img src="alpine.png" alt="Alpine" class>
+</section>
+</body>
+</html>
