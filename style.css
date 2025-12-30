@@ -138,6 +138,8 @@ body{
   display:block;
   text-decoration:none;
   color:inherit;
+  transition: all 0.3s ease
+
 }
 .race img{
   width:100%;
@@ -165,7 +167,7 @@ body{
   font-size: 12px;
   color: var(--muted);
 }
-.race:hover{ transform: translateY(-2px); transition: 160ms; }
+.race:hover{ transition: all 0.3s ease; transform: scale(1.03); }
 
 .right{
   display:flex;
