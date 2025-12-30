@@ -1,5 +1,8 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 :root{
@@ -33,7 +36,11 @@ body{
     radial-gradient(1200px 600px at 20% 30%, rgba(168,85,247,0.18), transparent 60%),
     radial-gradient(900px 500px at 80% 40%, rgba(59,130,246,0.12), transparent 60%),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
    
+=======
+    url("../assets/bg-f1.jpg") center/cover no-repeat;
+>>>>>>> Stashed changes
 =======
     url("../assets/bg-f1.jpg") center/cover no-repeat;
 >>>>>>> Stashed changes
@@ -146,8 +153,11 @@ body{
   text-decoration:none;
   color:inherit;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   transition: all 0.3s ease
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }
@@ -178,7 +188,11 @@ body{
   color: var(--muted);
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .race:hover{ transition: all 0.3s ease; transform: scale(1.03); }
+=======
+.race:hover{ transform: translateY(-2px); transition: 160ms; }
+>>>>>>> Stashed changes
 =======
 .race:hover{ transform: translateY(-2px); transition: 160ms; }
 >>>>>>> Stashed changes
@@ -491,10 +505,16 @@ li a {
 } 
  @font-face {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   font-family: 'HungerGames';
   src: url('./fonts/HungerGames.ttf') format('truetype');
 }
 
+=======
+    font-family: HungerGames;
+    src: url(C:\Users\Dion\Documents\GitHub\f1-website\hunger_games\HungerGames.ttf);
+  }
+>>>>>>> Stashed changes
 =======
     font-family: HungerGames;
     src: url(C:\Users\Dion\Documents\GitHub\f1-website\hunger_games\HungerGames.ttf);
