@@ -25,6 +25,8 @@
       justify-content: center;
       text-align: center;
       transition: ease 0.3s;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
     header h1 {
@@ -41,6 +43,11 @@
       font-size: 1.5rem;
       margin-top: 15px;
       color: #f1f1f1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     section { padding: 80px 8%; }
@@ -117,7 +124,6 @@
       color: #aaa;
     }
 
-    /*ALL CARS */
     .all-cars{
       position: relative;
       padding: 80px 8%;
@@ -164,17 +170,79 @@
       border-radius: 2px;
     }
 
-    .all-cars-car{
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: min(1100px, 78vw);
-      height: auto;
-      z-index: 1;
-      filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
-    }
+   /* Fixed frame that NEVER changes size */
+.car-frame {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 
-    @media (max-width: 900px){
+  width: min(800px, 70vw);
+  height: 320px;
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
+  z-index: 1;
+  pointer-events: none;
+}
+
+    #home {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: white;
+        border: solid 2px #00D2BE;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s, color 0.3s;
+        z-index: 10;
+    }
+    #home:hover {
+        background-color: #00D2BE;
+        color: #0B162F;
+        transform:scale(1.03)
+    }
+   .car-controls {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.car-controls button {
+  background: #00D2BE;
+  border: none;
+  color: #000;
+  font-size: 1.4rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.car-controls button:hover {
+  background: #00b8a6;
+}
+carimage{
+  animation: carFade 1s ease forwards;
+}
+@keyframes carFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  @media (max-width: 900px){
       header h1 { font-size: 2.8rem; }
       header p { font-size: 1.2rem; }
       .section-title { font-size: 2rem; }
@@ -182,22 +250,13 @@
       .all-cars-title h2 { font-size: 2rem; }
       .all-cars-car { width: 95vw; }
     }
-
-    .all-cars-car{
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: min(800px, 70vw);
-      height: auto;
-      z-index: 1;
-      filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
-    }
-
   </style>
 
 </head>
 
 <body>
+  <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
+  <header>
     <div>
     <h1>
       MERCEDES-AMG <span style="color:#C9CDD3;">PETRONAS</span> <span style="color:#00D2BE;">F1</span>
@@ -215,7 +274,7 @@
   </p>
 
   <div class="grid">
-    <!--Mercedes 3D -->
+
     <div class="sketchfab-embed-wrapper">
       <iframe
         title="Mercedes AMG Petronas W14 2023 (3D)"
@@ -234,8 +293,7 @@
       </iframe>
     </div>
     
-    
-    <!--Mercedes video (YouTube) -->
+   
     <iframe
       width="560"
       height="315"
@@ -273,7 +331,7 @@
   <h2 class="section-title">Champions & Drivers</h2>
   <div class="grid">
     <div class="driver-card">
-      <img src="hamilton.png" alt="Lewis Hamilton">
+      <img src="lewis.png" alt="Lewis Hamilton">
       <h3>Lewis Hamilton</h3>
       <p>Multiple-time World Champion with Mercedes</p>
     </div>
@@ -285,19 +343,22 @@
   </div>
 </section>
 
-<!--ALL CARS -->
-<section class="all-cars" data-watermark="W16">
+
+<section class="all-cars" data-watermark="W14">
   <div class="all-cars-title">
     <span class="all-cars-bar"></span>
     <h2>ALL CARS</h2>
   </div>
 
-  <img class="all-cars-car" src="images/mercedes-car.png" alt="Mercedes F1 Car">
-</section>
+  <div class="car-controls">
+    <button id="prevCar">◀</button>
+    <button id="nextCar">▶</button>
+  </div>
 
-<footer>
-  <p>© 2025 Mercedes-AMG PETRONAS Formula One Team • Unofficial Concept Website</p>
-</footer>
+  <div id="carFrame" class="car-frame"></div>
+
 
 </section>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
 </body>
