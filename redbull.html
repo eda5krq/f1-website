@@ -228,11 +228,31 @@
                 transform: translateY(0);
             }
         }
+        #home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: transparent;
+            color: white;
+            border: solid 2px #e10600;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        #home:hover {
+            background-color: #e10600;
+            color: #fff;
+            transform:scale(1.05)
+        }
     </style>
 </head>
 
 <body>
-
+    <a href="homepage.html"><button type="button" id="home">Back to Home</button>
+        </a>
     <header>
         <div>
             <h1>ORACLE <span style="color: #e10600;">RED</span> <span style="color:#FFC906
