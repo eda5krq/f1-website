@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>McLaren Racing | The Pioneers of F1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0B162F;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('images/mclaren_car.png') center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transform: scale(1);
+            transition: ease 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        header div {
+            transition: transform 0.3s ease;
+        }
+
+        header div:hover {
+            transform: scale(1.03);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #f1f1f1;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-left: 6px solid #FF8000;
+            padding-left: 15px;
+        }
+
+        .about p {
+            max-width: 900px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .grid img {
+            width: 100%;
+            border-radius: 14px;
+        }
+
+        .timeline {
+            background: #111217;
+        }
+
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .milestone {
+            background: #1a1b22;
+            padding: 30px;
+            border-radius: 14px;
+            border-top: 4px solid #FF8000;
+            transition: all 0.3s ease;
+        }
+
+        .milestone:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .milestone h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .milestone p {
+            color: #ccc;
+        }
+
+        .drivers {
+            text-align: center;
+        }
+
+        .driver-card {
+            background: #1a1b22;
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+
+        }
+
+        .driver-card:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .driver-card h3 {
+            margin-top: 15px;
+            font-size: 1.4rem;
+        }
+
+        footer {
+            background: #000;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .fotot {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+
+        .fotot .bg-text {
+            position: absolute;
+            font-size: 240px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+            pointer-events: none;
+
+            animation: slideIn 1.5s ease forwards, pulse 3.5s infinite ease-in-out 1.5s;
+            transform: translateY(-10px) scale(0.8);
+        }
+
+
+        .fotot .car-img {
+            width: 850px;
+            z-index: 2;
+            animation: carFade 2s ease forwards;
+        }
+
+        #forward:hover {
+
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        #back:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        #back,
+        #forward {
+            transition: all 0.3s ease;
+        }
+
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translate(-70%, -10%) scale(0.6);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -10%) scale(1);
+                left: 50%;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -10%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -10%) scale(1.07);
+            }
+        }
+
+        @keyframes carFade {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: transparent;
+            color: white;
+            border: solid 2px #FF8000;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        #home:hover {
+            background-color: #FF8000;
+            color: #fff;
+            transform:scale(1.05)
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="homepage.html"><button type="button" id="home">Back to Home</button>
+        </a>
+    <header>
+        <div>
+            <h1><span style="color: #FF8000;">McLAREN</span> RACING</h1>
+            <p>The Pioneers of Formula 1</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2 class="section-title">Team Origins</h2>
+        <p>
+            McLaren Racing was founded in 1963 by New Zealand racing driver Bruce McLaren. Starting as a small team,
+            McLaren quickly became a powerhouse in Formula 1, known for innovation, engineering excellence, and legendary drivers.
+            With 8 Constructors' Championships and 12 Drivers' Championships, McLaren is one of the most successful teams in F1 history.
+        </p>
+        <div class="grid">
+            <div class="sketchfab-embed-wrapper">
+                <iframe width="560" height="315" title="McLaren MP4/4 (1988)" frameborder="0" allowfullscreen
+                    mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/dabbf81921e94065bfadbb5fd1b2ee5b/embed">
+                </iframe>
+            </div>
+            <iframe width="560" height="315"
+             src="https://www.youtube.com/embed/yhfEX2qfIVI?si=BX-urmCDP7ksi5h6"
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin"
+             allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <h2 class="section-title">Key Milestones</h2>
+        <div class="timeline-container">
+            <div class="milestone">
+                <h3>1966</h3>
+                <p>McLaren's first Formula 1 victory at the Monaco Grand Prix.</p>
+            </div>
+            <div class="milestone">
+                <h3>1974</h3>
+                <p>First Constructors' Championship with Emerson Fittipaldi.</p>
+            </div>
+            <div class="milestone">
+                <h3>1976</h3>
+                <p>James Hunt wins the Drivers' Championship.</p>
+            </div>
+            <div class="milestone">
+                <h3>1980s</h3>
+                <p>Dominance with Alain Prost and Ayrton Senna, winning multiple titles.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="drivers">
+        <h2 class="section-title">Champions & Drivers</h2>
+        <div class="grid">
+            <div class="driver-card">
+                <img src="senna.png" alt="Ayrton Senna">
+                <h3>Ayrton Senna</h3>
+                <p>Three-time World Champion (1988, 1990, 1991)</p>
+            </div>
+            <div class="driver-card">
+                <img src="hamilton.png" alt="Lewis Hamilton">
+                <h3>Lewis Hamilton</h3>
+                <p>Multiple World Champion & record holder</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Cars</h2>
+        <button type="button" id="back"
+            style="width:50px;height:50px;border-radius:50%; border:2px solid white; background:none; color:white">🡨</button>
+        <button type="button" id="forward"
+            style="width:50px;height:50px;border-radius:50%; border:2px solid white; background:none; color:white">🡪</button>
+        <div class="fotot">
+            <h1 class="bg-text">MCL38</h1>
+            <img alt="MCL38" src="mcl38.png" class="car-img">
+        </div>
+    </section>
+    <script src="mclaren.js"></script>
+
+
+</body>
+
+</html>
