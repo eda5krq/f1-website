@@ -70,28 +70,6 @@ $(document).ready(function () {
   $logo.addClass('animate-fade-in');
   $img.addClass('animate-fade-in');
   $text.addClass('animate-text-fade-in');
-
-  // When logo image is clicked
-  $img.on('click', function () {
-    if ($audio.length) {
-      const playPromise = $audio[0].play();
-      if (playPromise !== undefined) {
-        playPromise.catch(err => console.warn('Audio play failed:', err));
-      }
-    }
-
-    $('body').addClass('gradient-active');
-
-    $intro.find('.logo, .paragraph').fadeTo(500, 0);
-    $intro.delay(400).fadeTo(1000, 0, function () {
-      $intro.hide();
-
-      $main.css('display', 'block').hide().fadeTo(1000, 1, function () {
-        revealNavbarSequentially();
-      });
-    });
-  });
-
   // Sequential navbar reveal
   function revealNavbarSequentially() {
     const $navbarImgs = $('.navbar img');
