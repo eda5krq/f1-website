@@ -41,6 +41,18 @@
     }
     section {
       padding: 80px 8%;
+      position: relative;
+    }
+    section[data-watermark]::before {
+      content: attr(data-watermark);
+      position: absolute;
+      top: 35%;
+      left: 40%;
+      font-size: 250px;
+      color: rgba(255, 255, 255, 0.2);
+      z-index: -1;
+      pointer-events: none;
+      font-weight: 900;
     }
     .section-title {
       font-size: 2.5rem;
@@ -135,6 +147,41 @@
       border-color: #0090ff;
       transform: scale(1.03);
     }
+    #backward{
+      background-color: transparent;
+      color:#0090ff;
+      border: solid 2px #0090ff;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #forward{
+      background-color: transparent;
+      color:#0090ff;
+      border: solid 2px #0090ff;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #backward:hover, #forward:hover{
+      background-color: pink;
+      color: white;
+      transform: scale(1.03);
+      border: 2px solid white;
+    }
+    #car-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 14px;
+      transition: opacity 0.6s ease;
+    }
   </style>
 </head>
 <body>
@@ -202,9 +249,14 @@
   </div>
 </section>
 
-<section>
+<section data-watermark="A522">
   <h2 class="section-title">Cars</h2>
- <img src="alpine.png" alt="Alpine" class>
+  <button type="button" id="backward">←</button>
+     <button type="button" id="forward">→</button>
+
+ <img id="car-image" src="a522.png" alt="Alpine" class>
+
 </section>
+<script src="alpine.js"></script>
 </body>
 </html>
