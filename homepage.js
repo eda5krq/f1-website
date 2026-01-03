@@ -83,3 +83,26 @@ $(document).ready(function () {
   }
 
 });
+
+
+
+const buttons = document.querySelectorAll(".btn--ghost");
+
+// BUTONI: NEXT RACE (8 MARS / AUSTRALIAN GP)
+document.querySelector(".btn").addEventListener("click", () => {
+  window.open(
+    "https://www.formula1.com/en/racing/2026/Australia.html",
+    "_blank"
+  );
+});
+
+// BUTONI: TRENDING / TOP DRIVERS
+document.querySelector(".btn--ghost").addEventListener("click", () => {
+  window.open(
+    "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
+    "_blank"
+  );
+});
+
+
+
