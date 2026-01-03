@@ -1,5 +1,5 @@
 // Set your next race date here (local time)
-const targetDate = new Date("2026-05-26T14:00:00");
+const targetDate = new Date("2026-03-08T14:00:00");
 
 function pad2(n) {
   return String(n).padStart(2, "0");
@@ -28,7 +28,6 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000 * 10);
-const targetDate = new Date("2026-05-26T14:00:00");
 
 function pad2(n) {
   return String(n).padStart(2, "0");
