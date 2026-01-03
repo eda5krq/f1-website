@@ -1,0 +1,65 @@
+.fake-video {
+  width: 560px;
+  height: 315px;
+  background-image: url("https://img.youtube.com/vi/70Yd-jMqPGE/maxresdefault.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fake-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* play button */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: white;
+  z-index: 2;
+}
+
+#home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  display: inline-flex;          
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 22px;
+  min-width: 160px;             
+
+  background-color: transparent;
+  color: white;
+
+  border: 2px solid #010002;
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  z-index: 10;
+}
+
+#home:hover {
+  background-color: transparent ;
+  color: #e9e9ec;
+  transform: scale(1.05);
+}

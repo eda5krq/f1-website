@@ -1,0 +1,342 @@
+*{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at top,
+                    #7a0000 0%,
+                    #3b0000 35%,
+                    #0b0b0b 70%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: ease 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 180px;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0),
+                    rgba(90, 0, 0, 0.55),
+                    rgba(90, 0, 0, 0.95));
+            pointer-events: none;
+        }
+
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        header div {
+            transition: transform 0.3s ease;
+        }
+
+        header div:hover {
+            transform: scale(1.03);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #f1f1f1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        section {
+            padding: 80px 8%;
+            background: linear-gradient(180deg,
+                    rgba(212, 0, 0, 0.05),
+                    rgba(0, 0, 0, 0));
+        }
+
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-left: 6px solid #D40000;
+            padding-left: 15px;
+        }
+
+        .about p {
+            max-width: 900px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .about {
+            background: radial-gradient(circle at top, rgba(212, 0, 0, 0.22), rgba(0, 0, 0, 0) 60%);
+        }
+
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .timeline {
+            background: #111217;
+        }
+
+        .timeline {
+            background: linear-gradient(180deg,
+                    #1a0000 0%,
+                    #111217 60%);
+        }
+
+
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .milestone {
+            background: #1a1b22;
+            padding: 30px;
+            border-radius: 14px;
+            border-top: 4px solid #D40000;
+            transition: all 0.3s ease;
+        }
+
+        .milestone:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .milestone h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .milestone p {
+            color: #ccc;
+        }
+
+        .drivers {
+            text-align: center;
+        }
+
+        .driver-card {
+            background: #1a1b22;
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .driver-card,
+        .milestone {
+            box-shadow: 0 0 0 transparent;
+        }
+
+        .driver-card:hover,
+        .milestone:hover {
+            box-shadow: 0 0 25px rgba(212, 0, 0, 0.35);
+        }
+
+
+        .driver-card:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .driver-card img {
+            max-width: 100%;
+            max-height: 420px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            border-radius: 14px;
+        }
+
+
+
+        .driver-card h3 {
+            margin-top: 15px;
+            font-size: 1.4rem;
+        }
+
+        footer {
+            background: #000;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .all-cars {
+            position: relative;
+            padding: 30px;
+            padding-bottom: 0;
+            background: radial-gradient(circle at bottom,
+                    #5c0000 0%,
+                    #0b0b0b 60%);
+            min-height: 82vh;
+        }
+
+
+
+
+        .all-cars::before {
+            content: attr(data-watermark);
+            position: absolute;
+            left: 50%;
+            top: 42%;
+            transform: translate(-50%, -50%) scaleX(1.1);
+            font-size: clamp(140px, 18vw, 260px);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 0.85;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.14);
+            text-shadow:
+                0 0 40px rgba(212, 0, 0, 0.25),
+                0 0 80px rgba(212, 0, 0, 0.15);
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .all-cars[data-watermark*="24"]::before {
+            color: rgba(255, 255, 255, 0.18);
+        }
+        .all-cars-title {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .all-cars-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .all-cars-bar {
+            width: 10px;
+            height: 56px;
+            background: #D40000;
+            border-radius: 2px;
+        }
+
+  .car-frame {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -20%);
+
+    height: 460px;
+    width: min(900px, 75vw);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.45));
+    z-index: 3;
+    pointer-events: none;
+
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+
+.car-frame.fade-out {
+    opacity: 0;
+}
+
+.car-frame {
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+
+.car-frame.fade-out {
+    opacity: 0;
+}
+
+
+        #home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: transparent;
+            color: white;
+            border: solid 2px #D40000;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s, color 0.3s;
+            z-index: 10;
+        }
+
+        #home:hover {
+            background-color: #D40000;
+            color: #0b0b0b;
+            transform: scale(1.03)
+        }
+
+        .car-controls {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .car-controls button {
+            background: #D40000;
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .car-controls button:hover {
+            background: #b00000;
+        }

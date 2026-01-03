@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Williams Racing | Legacy of Speed</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="williams.css">
+  
+  <style>
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #e9eeef ;
+      color: #ffffff;
+      line-height: 1.9;
+    }
+
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      transition: transform 0.3s ease;
+    }
+      
+      header div { transition: transform 0.3s ease; }
+      header div:hover { transform: scale(1.03); }
+
+    header p {
+      font-size: 1.4rem;
+      margin-top: 15px;
+      color: #0c0146;
+    }
+     @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    section {
+      padding: 60px ;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      border-left: 6px solid #1A6598 ;
+      padding-left: 15px;
+      color: black ;
+    }
+
+    .about p {
+      max-width: 900px;
+      font-size: 1.1rem;
+      color: #1A6598 ;
+    }
+
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .grid img {
+      width: 100%;
+      border-radius: 14px;
+    }
+     
+
+      .timeline {
+      background: #6e7d82;
+      padding: 150px ;
+    }
+
+    .timeline-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    
+    .milestone {
+      background: #0f2747;
+      padding: 40px;
+      margin-top: 40px;
+      border-radius: 14px;
+      border-top: 4px solid #00a3e0;
+      transition: 0.3s;
+    }
+
+    .milestone:hover {
+      transform: translateY(-6px);
+    }
+
+    
+    .drivers {
+      text-align: left;
+    }
+
+    .driver-card {
+      background: #0f2747;
+      padding: 30px;
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+
+    .driver-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .driver-card h3 {
+      margin-top: 20px;
+    }
+
+      .all-cars{
+  position: relative;
+  padding: 60px;
+  padding-bottom: 0;
+  background: #505051 ;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+
+    .all-cars::before{
+  content: attr(data-watermark);
+  position: absolute;
+  left: 50%;
+  top: 60%;                     
+  transform: translate(-50%, -50%);
+  font-size: 22vw;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: rgba(6, 0, 17, 0.08);
+  z-index: 0;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+
+    }
+
+    .all-cars-title{
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 100px;
+      color: black ;
+    }
+
+    .all-cars-title h2{
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .all-cars-bar{
+      display: inline-block ;
+      width: 10px;
+      height: 56px;
+      background: #1A6598 ;
+      border-radius: 2px;
+    }
+
+   /* Fixed frame that NEVER changes size */
+.car-frame{
+ position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  transform:
+    translateX(-50%)
+    translate(var(--x, 0px), var(--y, 0px))
+    scale(var(--s, 1));
+
+  transform-origin: bottom center;
+
+  width: min(900px, 75vw);
+  height: 460px;
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
+  z-index: 1;
+  pointer-events: none;
+}
+
+    button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid rgb(1, 4, 16);
+      background: none;
+      color: rgb(0, 1, 7);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+  
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+     .car-controls {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.car-controls button {
+  background: #aeb4b3;
+  border: none;
+  color: #000;
+  font-size: 1.4rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.car-controls button:hover {
+  background: #4b4e4d;
+}
+carimage{
+  height: 200px;
+  animation: carFade 1s ease forwards;
+}
+@keyframes carFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  @media (max-width: 900px){
+      header h1 { font-size: 2.8rem; }
+      header p { font-size: 1.2rem; }
+      .section-title { font-size: 2rem; }
+      .all-cars { min-height: 420px; }
+      .all-cars-title h2 { font-size: 2rem; }
+      .all-cars-car { width: 500vw; }
+    }
+    
+    
+  </style>
+</head>
+
+<body>
+ <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
+<header>
+  <div id="home ">
+    <h1>WILLIAMS <span style="color:#00a3e0;">RACING</span></h1>
+    <p>Legacy. Innovation. Pure Racing.</p>
+  </div>
+</header>
+
+
+<section class="about">
+  <h2 class="section-title">Team Origins</h2>
+  <p>
+    Williams Racing is one of the most iconic teams in Formula 1 history.
+    Founded in 1977 by Sir Frank Williams, the team became synonymous with
+    engineering excellence, legendary drivers, and championship success.
+  </p>
+
+  <div class="grid">
+   <div class="sketchfab-embed-wrapper">
+  <iframe
+  width="560"
+  height="315"
+      title="Williams FW43B"
+    frameborder="0"
+    allow="autoplay; fullscreen; xr-spatial-tracking"
+    xr-spatial-tracking
+    execution-while-out-of-viewport
+    execution-while-not-rendered
+    web-share
+    src="https://sketchfab.com/models/a2c3e0b054bb4c41bedf3b3e786d29da/embed?autostart=1&ui_infos=0&ui_watermark=0&ui_help=0">
+  </iframe>
+</div>
+
+<a
+  href="https://www.youtube.com/watch?v=70Yd-jMqPGE"
+  target="_blank"
+  class="fake-video"
+>
+  <div class="play-btn">▶</div>
+</a>
+
+</section>
+
+<section class="timeline">
+  <h2 class="section-title">Key Milestones</h2>
+
+  <div class="timeline-container">
+    <div class="milestone">
+      <h3>1977</h3>
+      <p>Williams Racing enters Formula 1.</p>
+    </div>
+    <div class="milestone">
+      <h3>1980–1997</h3>
+      <p>Multiple Constructors’ and Drivers’ Championships.</p>
+    </div>
+    <div class="milestone">
+      <h3>1992</h3>
+      <p>Dominant season with Nigel Mansell.</p>
+    </div>
+    <div class="milestone">
+      <h3>2023–Now</h3>
+      <p>Rebuilding era focused on long-term success.</p>
+    </div>
+  </div>
+</section>
+
+<section class="drivers">
+  <h2 class="section-title">Legendary Drivers</h2>
+
+  <div class="grid">
+    <div class="driver-card">
+      <img src="mansell.png" alt="Nigel Mansell">
+      <h3>Nigel Mansell</h3>
+      <p>Nigel Mansell is a Williams F1 icon and the 1992 World Champion.</p>
+    </div>
+
+    <div class="driver-card">
+      <img src="alonso.png" alt="Fernando Alonso">
+      <h3>Fernando Alonso</h3>
+      <p>Fernando Alonso is a legendary Formula 1 driver known for his exceptional talent and experience.</p>
+    </div>
+  </div>
+</section>
+
+<section class="all-cars">
+  <div class="all-cars-title">
+    <span class="all-cars-bar"></span>
+    <h2>ALL CARS</h2>
+  </div>
+
+  <div class="car-controls">
+    <button id="prevCar">◀</button>
+    <button id="nextCar">▶</button>
+  </div>
+
+  <div id="carFrame" class="car-frame"></div>
+</section>
+
+
+
+<script src="williams.js"></script>
+
+</body>
+</html>
