@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scuderia Ferrari | Driven by Passion</title>
+
+    <link rel="stylesheet" href="./ferraristyle.css">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at top,
+                    #7a0000 0%,
+                    #3b0000 35%,
+                    #0b0b0b 70%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: ease 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* smooth blend into next section */
+        header::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 180px;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0),
+                    rgba(90, 0, 0, 0.55),
+                    rgba(90, 0, 0, 0.95));
+            pointer-events: none;
+        }
+
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        header div {
+            transition: transform 0.3s ease;
+        }
+
+        header div:hover {
+            transform: scale(1.03);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #f1f1f1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        section {
+            padding: 80px 8%;
+            background: linear-gradient(180deg,
+                    rgba(212, 0, 0, 0.05),
+                    rgba(0, 0, 0, 0));
+        }
+
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-left: 6px solid #D40000;
+            /* Ferrari red */
+            padding-left: 15px;
+        }
+
+        .about p {
+            max-width: 900px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .about {
+            background: radial-gradient(circle at top, rgba(212, 0, 0, 0.22), rgba(0, 0, 0, 0) 60%);
+        }
+
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .timeline {
+            background: #111217;
+        }
+
+        .timeline {
+            background: linear-gradient(180deg,
+                    #1a0000 0%,
+                    #111217 60%);
+        }
+
+
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .milestone {
+            background: #1a1b22;
+            padding: 30px;
+            border-radius: 14px;
+            border-top: 4px solid #D40000;
+            /* Ferrari red */
+            transition: all 0.3s ease;
+        }
+
+        .milestone:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .milestone h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .milestone p {
+            color: #ccc;
+        }
+
+        .drivers {
+            text-align: center;
+        }
+
+        .driver-card {
+            background: #1a1b22;
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .driver-card,
+        .milestone {
+            box-shadow: 0 0 0 transparent;
+        }
+
+        .driver-card:hover,
+        .milestone:hover {
+            box-shadow: 0 0 25px rgba(212, 0, 0, 0.35);
+        }
+
+
+        .driver-card:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .driver-card img {
+            max-width: 100%;
+            max-height: 420px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            border-radius: 14px;
+        }
+
+
+
+        .driver-card h3 {
+            margin-top: 15px;
+            font-size: 1.4rem;
+        }
+
+        footer {
+            background: #000;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .all-cars {
+            position: relative;
+            padding: 30px;
+            padding-bottom: 0;
+            background: radial-gradient(circle at bottom,
+                    #5c0000 0%,
+                    #0b0b0b 60%);
+            overflow: hidden;
+            min-height: 520px;
+        }
+        
+        
+
+
+        .all-cars::before {
+            content: attr(data-watermark);
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%, -50%) scaleX(1.1);
+
+            font-size: clamp(140px, 18vw, 260px);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 0.85;
+            white-space: nowrap;
+
+            color: rgba(255, 255, 255, 0.14);
+            /* 🔼 more visible */
+
+            text-shadow:
+                0 0 40px rgba(212, 0, 0, 0.25),
+                /* Ferrari red glow */
+                0 0 80px rgba(212, 0, 0, 0.15);
+
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .all-cars[data-watermark*="24"]::before {
+            color: rgba(255, 255, 255, 0.18);
+        }
+
+        
+
+
+
+        .all-cars-title {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .all-cars-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .all-cars-bar {
+            width: 10px;
+            height: 56px;
+            background: #D40000;
+            /* Ferrari red */
+            border-radius: 2px;
+        }
+
+        /* Fixed frame that NEVER changes size */
+        .car-frame {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform:
+                translateX(-50%) translate(var(--x, 0px), var(--y, 0px)) scale(var(--s, 1));
+            transform-origin: bottom center;
+
+            width: min(900px, 75vw);
+            height: 460px;
+
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: contain;
+
+            filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.45));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .car-frame {
+            z-index: 3;
+            /* car above watermark */
+            opacity: 1;
+        }
+
+
+        #home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: transparent;
+            color: white;
+            border: solid 2px #D40000;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s, color 0.3s;
+            z-index: 10;
+        }
+
+        #home:hover {
+            background-color: #D40000;
+            color: #0b0b0b;
+            transform: scale(1.03)
+        }
+
+        .car-controls {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .car-controls button {
+            background: #D40000;
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .car-controls button:hover {
+            background: #b00000;
+        }
+
+        @keyframes carFade {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .all-cars {
+                min-height: 420px;
+            }
+
+            .all-cars-title h2 {
+                font-size: 2rem;
+            }
+
+            #carFrame {
+                outline: 3px solid rgba(0, 255, 0, 0.5);
+                /* debug: see the box */
+                z-index: 999;
+                /* ensure it's on top */
+                opacity: 1 !important;
+                /* ensure not hidden */
+                background-position: center center;
+                /* easier to see */
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
+
+    <header>
+        <div>
+            <h1>
+                SCUDERIA <span style="color:#fff;">FERRARI</span> <span style="color:#D40000;">F1</span>
+            </h1>
+            <p>Driven by Passion & Performance</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2 class="section-title">Team Origins</h2>
+        <p>
+            Scuderia Ferrari is Formula 1’s most iconic team—defined by heritage, innovation, and relentless racing
+            spirit.
+            Since its first Grand Prix entry, Ferrari has combined Italian design and engineering with world-class
+            competition,
+            becoming a symbol of passion and performance across generations.
+        </p>
+
+        <div class="grid">
+            <!-- Keep your idea: one 3D embed + one YouTube embed -->
+            <div class="sketchfab-embed-wrapper">
+                <iframe title="Ferrari F1 2019 (3D)" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                    webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share width="560" height="315"
+                    src="https://sketchfab.com/models/1b050bffe4e749b586b4782ee7ff4fd0/embed?autostart=1&ui_infos=0&ui_watermark=0&ui_help=0&ui_settings=0">
+                </iframe>
+            </div>
+
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/X-no8kz7sSU"
+                title="Scuderia Ferrari Video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+    </section>
+
+    <section class="timeline">
+        <h2 class="section-title">Key Milestones</h2>
+        <div class="timeline-container">
+            <div class="milestone">
+                <h3>1950</h3>
+                <p>Ferrari competes in the first ever Formula 1 World Championship season.</p>
+            </div>
+            <div class="milestone">
+                <h3>1975–1979</h3>
+                <p>Championship success returns with legendary cars and drivers.</p>
+            </div>
+            <div class="milestone">
+                <h3>2000–2004</h3>
+                <p>Dominant era with multiple Drivers’ and Constructors’ Championships.</p>
+            </div>
+            <div class="milestone">
+                <h3>2022+</h3>
+                <p>A modern resurgence focused on innovation, speed, and returning to the top.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="drivers">
+        <h2 class="section-title">Champions & Drivers</h2>
+        <div class="grid">
+            <div class="driver-card">
+                <img src="images/leclerc.png" alt="Charles Leclerc">
+                <h3>Charles Leclerc</h3>
+                <p>Lead driver of Ferrari’s modern era</p>
+            </div>
+            <div class="driver-card">
+                <img src="images/hamilton.png" alt="Lewis Hamilton">
+                <h3>Lewis Hamilton</h3>
+                <p>Seven-time World Champion and legendary Formula 1 driver</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="all-cars" data-watermark="SF-24">
+        <div class="all-cars-title">
+            <span class="all-cars-bar"></span>
+            <h2>ALL CARS</h2>
+        </div>
+
+        <div class="car-controls">
+            <button id="prevCar">◀</button>
+            <button id="nextCar">▶</button>
+        </div>
+
+        <div id="carFrame" class="car-frame"></div>
+    </section>
+
+    <script src="/ferrari%20projekt/ferrari.js"></script>
+
+
+
+
+
+</body>
+
+</html>
