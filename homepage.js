@@ -1,5 +1,5 @@
 // Set your next race date here (local time)
-const targetDate = new Date("2026-05-26T14:00:00");
+const targetDate = new Date("2026-03-08T14:00:00");
 
 function pad2(n) {
   return String(n).padStart(2, "0");
@@ -28,7 +28,6 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000 * 10);
-const targetDate = new Date("2026-05-26T14:00:00");
 
 function pad2(n) {
   return String(n).padStart(2, "0");
@@ -84,3 +83,33 @@ $(document).ready(function () {
   }
 
 });
+
+
+
+const buttons = document.querySelectorAll(".btn--ghost");
+
+// BUTONI: NEXT RACE (8 MARS / AUSTRALIAN GP)
+document.querySelector(".btn").addEventListener("click", () => {
+  window.open(
+    "https://www.formula1.com/en/racing/2026/Australia.html",
+    "_blank"
+  );
+});
+
+// BUTONI: TRENDING / TOP DRIVERS
+document.querySelector(".btn--ghost").addEventListener("click", () => {
+  window.open(
+    "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
+    "_blank"
+  );
+});
+
+  function showSubscribePopup() {
+    alert("Thanks for subscribing to our newsletter!");
+    document.getElementById("email").value = "";
+  }
+
+  document.getElementById("subscribeBtn").addEventListener("click", showSubscribePopup);
+
+
+
