@@ -1,8 +1,9 @@
 const cars = [
-  { name: "RB21", img: "rb21.png" },
   { name: "RB20", img: "rb20.png" },
   { name: "RB19", img: "rb19.png" },
-  { name: "RB18", img: "rb18.png" }
+  { name: "RB18", img: "rb18.png" },
+    { name: "RB16B", img: "rb16b.png" }
+
 ];
 
 let currentIndex = 0;
