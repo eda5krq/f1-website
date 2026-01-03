@@ -104,5 +104,12 @@ document.querySelector(".btn--ghost").addEventListener("click", () => {
   );
 });
 
+  function showSubscribePopup() {
+    alert("Thanks for subscribing to our newsletter!");
+    document.getElementById("email").value = "";
+  }
+
+  document.getElementById("subscribeBtn").addEventListener("click", showSubscribePopup);
+
 
 
