@@ -171,6 +171,7 @@
     }
 
     .all-cars-bar{
+      display: inline-block ;
       width: 10px;
       height: 56px;
       background: #1A6598 ;
@@ -356,7 +357,10 @@ carimage{
 </section>
 
 <section class="all-cars">
-  <h2 class="all-cars-title">ALL CARS</h2>
+  <div class="all-cars-title">
+    <span class="all-cars-bar"></span>
+    <h2>ALL CARS</h2>
+  </div>
 
   <div class="car-controls">
     <button id="prevCar">◀</button>

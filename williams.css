@@ -34,12 +34,12 @@
   top: 20px;
   left: 20px;
 
-  display: inline-flex;          /* 👈 ky është çelësi */
+  display: inline-flex;          
   align-items: center;
   justify-content: center;
 
   padding: 12px 22px;
-  min-width: 160px;              /* 👈 formë drejtkëndëshe */
+  min-width: 160px;             
 
   background-color: transparent;
   color: white;
