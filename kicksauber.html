@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kicksauber F1 Team 2025</title>
+    <title>Kick Sauber F1 Team 2025</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --bg-main: #050606;
+            --bg-section: #0b0f0d;
+            --card-bg: #0f1512;
+            --accent: #00ff5a;
+            --accent-soft: rgba(0, 255, 90, 0.18);
+            --text-main: #ffffff;
+            --text-muted: #b5b5b5;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -17,16 +26,35 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #0f0f0f;
-            color: #ffffff;
+            background: var(--bg-main);
+            color: var(--text-main);
             line-height: 1.6;
+        }
+        #home{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border:solid 2px green;
+            background-color: transparent;
+            color: whitesmoke;
+            font-size: 18px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #home:hover{
+            background-color: green;
+            color: white;
+            transform: scale(1.1);
         }
 
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
                 url('images/kicksaubercar.png') center/cover no-repeat;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -42,25 +70,31 @@
         header p {
             font-size: 1.5rem;
             margin-top: 15px;
-            color: #ddd;
+            color: var(--text-muted);
         }
 
         section {
             padding: 80px 8%;
+            background: linear-gradient(
+                180deg,
+                rgba(0,255,90,0.04),
+                transparent
+            );
         }
 
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 30px;
             text-transform: uppercase;
-            border-left: 6px solid #00aaff;
+            border-left: 6px solid var(--accent);
             padding-left: 15px;
+            text-shadow: 0 0 20px rgba(0,255,90,0.35);
         }
 
         .about p {
             max-width: 900px;
             font-size: 1.1rem;
-            color: #ccc;
+            color: var(--text-muted);
         }
 
         .grid {
@@ -71,39 +105,37 @@
         }
 
         .timeline {
-            background: #141414;
+            background: var(--bg-section);
         }
 
-        .milestone {
-            background: #1c1c1c;
+        .milestone,
+        .driver-card {
+            background: var(--card-bg);
             padding: 30px;
-            border-radius: 14px;
-            border-top: 4px solid #00aaff;
-            transition: 0.3s;
+            border-radius: 16px;
+            border-top: 4px solid var(--accent);
+            transition: all 0.3s ease;
         }
 
-        .milestone:hover {
-            transform: translateY(-5px);
+        .milestone:hover,
+        .driver-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 30px var(--accent-soft);
+        }
+
+        .milestone h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
         }
 
         .drivers {
             text-align: center;
         }
 
-        .driver-card {
-            background: #1c1c1c;
-            padding: 30px;
-            border-radius: 16px;
-            transition: 0.3s;
-        }
-
-        .driver-card:hover {
-            transform: translateY(-5px);
-        }
-
         .driver-card img {
             width: 100%;
             border-radius: 12px;
+            margin-bottom: 15px;
         }
 
         .fotot {
@@ -111,96 +143,155 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 60px;
         }
 
         .bg-text {
             position: absolute;
             font-size: 220px;
             font-weight: 900;
-            color: rgba(255, 255, 255, 0.05);
+            letter-spacing: -0.06em;
+            color: rgba(0, 255, 90, 0.12);
+            user-select: none;
+            pointer-events: none;
         }
 
-        .car-img {
-            width: 800px;
-            z-index: 2;
+       .car-img {
+    width: 800px;
+    z-index: 2;
+    filter:
+        drop-shadow(0 0 25px rgba(0,255,90,0.25))
+        drop-shadow(0 20px 35px rgba(0,0,0,0.6));
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.car-title {
+    position: absolute;
+    font-size: 220px;
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    color: rgba(0, 255, 90, 0.12);
+    user-select: none;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+        .back{
+            border:solid 4px green;
+            background-color: transparent; 
+            color: green;
+            font-size: 24px;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            }
+
+        .next{ border:solid 4px green;
+            background-color: transparent; 
+            color: green;
+            font-size: 24px;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor:pointer;
+            transition: all 0.3s ease;
         }
 
-        footer {
-            background: #000;
-            padding: 30px;
-            text-align: center;
-            color: #888;
+        .next:hover{
+            background-color: green;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .back:hover{
+            background-color: green;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 900px) {
+            .bg-text {
+                font-size: 120px;
+            }
+
+            .car-img {
+                width: 100%;
+            }
+
+            header h1 {
+                font-size: 2.8rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <div>
-            <h1><span style="color:#00aaff;">KICKSAUBER</span> F1 TEAM</h1>
-            <p>German Precision in Formula 1</p>
+<header>
+   <a href="homepage.html"><button type="button" id="home">Homepage</button></a> 
+    <div>
+        <h1><span style="color:var(--accent);">KICK SAUBER</span> F1 TEAM</h1>
+        <p>Precision. Innovation. Performance.</p>
+    </div>
+</header>
+
+<section class="about">
+    <h2 class="section-title">Team Origins</h2>
+    <p>
+        Kick Sauber F1 Team represents German-Swiss engineering excellence at the highest level of motorsport.
+        With a renewed identity and bold technical vision, the team enters the 2025 Formula 1 season focused on
+        performance, innovation, and long-term success.
+    </p>
+</section>
+
+<section class="timeline">
+    <h2 class="section-title">Key Milestones</h2>
+    <div class="grid">
+        <div class="milestone">
+            <h3>2020</h3>
+            <p>Return to strong midfield competitiveness.</p>
         </div>
-    </header>
-
-    <section class="about">
-        <h2 class="section-title">Team Origins</h2>
-        <p>
-            Kicksauber F1 Team has a rich history of engineering excellence and competitive spirit.
-            Focused on innovation and consistency, the team continues to challenge the front-runners in Formula 1.
-        </p>
-    </section>
-
-    <section class="timeline">
-        <h2 class="section-title">Key Milestones</h2>
-        <div class="grid">
-            <div class="milestone">
-                <h3>2020</h3>
-                <p>Kicksauber F1 Team returns to strong form with new design philosophy.</p>
-            </div>
-            <div class="milestone">
-                <h3>2022</h3>
-                <p>Secured several podiums and points finishes.</p>
-            </div>
-            <div class="milestone">
-                <h3>2024</h3>
-                <p>Optimized aerodynamics and engine performance.</p>
-            </div>
-            <div class="milestone">
-                <h3>2025</h3>
-                <p>Entering new season with Gabriel Bortoleto and Nico Hulkenberg.</p>
-            </div>
+        <div class="milestone">
+            <h3>2022</h3>
+            <p>Consistent points finishes across the season.</p>
         </div>
-    </section>
-
-    <section class="drivers">
-        <h2 class="section-title">Drivers</h2>
-        <div class="grid">
-            <div class="driver-card">
-                <img src="gabriel-bortoleto (1).png" alt="Gabriel Bortoleto">
-                <h3>Gabriel Bortoleto</h3>
-                <p>Rising young talent from Brazil</p>
-            </div>
-            <div class="driver-card">
-                <img src="nico-hulkenberg-stake-f1-team (1).png" alt="Nico Hulkenberg">
-                <h3>Nico Hulkenberg</h3>
-                <p>Experienced German driver with F1 expertise</p>
-            </div>
+        <div class="milestone">
+            <h3>2024</h3>
+            <p>Major aerodynamic and technical restructuring.</p>
         </div>
-    </section>
-
-    <section>
-        <h2 class="section-title">Car</h2>
-        <div class="fotot">
-            <h1 class="bg-text">KS-25</h1>
-            <img src="Kicksauber2025 (1).png" alt="Kicksauber F1 car" class="car-img">
+        <div class="milestone">
+            <h3>2025</h3>
+            <p>New era begins with Bortoleto and Hülkenberg.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        © 2025 Kicksauber F1 Team – Student Project
-    </footer>
+<section class="drivers">
+    <h2 class="section-title">Drivers</h2>
+    <div class="grid">
+        <div class="driver-card">
+            <img src="gabriel-bortoleto (1).png" alt="Gabriel Bortoleto">
+            <h3>Gabriel Bortoleto</h3>
+            <p>Young Brazilian talent leading the future.</p>
+        </div>
+        <div class="driver-card">
+            <img src="nico-hulkenberg-stake-f1-team (1).png" alt="Nico Hülkenberg">
+            <h3>Nico Hülkenberg</h3>
+            <p>Experience, consistency, and development expertise.</p>
+        </div>
+    </div>
+</section>
 
+<section>
+    <h2 class="section-title">Cars</h2>
+    <button type="button" class="back">🡨</button>
+        <button type="button" class="next">🡪</button>
+    <div class="fotot">
+       <h2 class="car-title">C45</h2>
+<img src="Kicksauber2025 (1).png" alt="Kick Sauber F1 2025 car" class="car-img">
+
+    </div>
+</section>
+<script src="kick.js"></script>
 </body>
 </html>
