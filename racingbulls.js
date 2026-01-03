@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const cars = [
+        { image: "images/tr2008.png", watermark: "RB-2025", x: 0, y: 0, s: 1.0 },
         { image: "images/rb2024.png", watermark: "RB-2024", x: 0, y: 0, s: 1.0 },
         { image: "images/rb2023.png", watermark: "RB-2023", x: 0, y: 0, s: 1.0 },
-        { image: "images/at03.png", watermark: "AT03", x: 0, y: 0, s: 1.0 },
-        { image: "images/tr2008.png", watermark: "TR-2008", x: 0, y: 0, s: 1.0 }
+        { image: "images/at03.png", watermark: "STR3", x: 0, y: 0, s: 1.0 },
     ];
 
     let currentIndex = 0;
@@ -44,20 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCar();
     });
 
-    window.addEventListener("keydown", (e) => {
-        const c = cars[currentIndex];
+   
 
-        if (e.key === "ArrowLeft") c.x -= 5;
-        if (e.key === "ArrowRight") c.x += 5;
-        if (e.key === "ArrowUp") c.y -= 5;
-        if (e.key === "ArrowDown") c.y += 5;
-
-        if (e.key === "+") c.s = Math.round((c.s + 0.01) * 100) / 100;
-        if (e.key === "-") c.s = Math.round((c.s - 0.01) * 100) / 100;
-
-        updateCar();
-        console.log(c);
-    });
 
 
     updateCar();

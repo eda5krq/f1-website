@@ -377,7 +377,7 @@ section {
 .car-frame {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: -15%;
     transform: translateX(-50%);
     transform-origin: bottom center;
     width: min(900px, 75vw);
