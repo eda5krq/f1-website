@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aston Martin Aramco F1 Team</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./astonmartin.css" />
+</head>
+
+<body>
+    <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <h1>
+                ASTON MARTIN <span class="muted">ARAMCO</span> <span class="accent">F1</span>
+            </h1>
+            <p>Precision. Performance. British Racing Green.</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2 class="section-title">Team Origins</h2>
+        <p>
+            Aston Martin Aramco Formula One Team combines iconic racing heritage with modern engineering.
+            Built around aerodynamic efficiency, high-speed stability, and continuous development, the team
+            competes at the top level of motorsport with relentless ambition.
+        </p>
+
+        <div class="grid">
+            <div class="embed-card">
+                <div class="sketchfab-embed-wrapper">
+                    <iframe title="Aston Martin F1 AMR23 2023" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                        webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                        xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+                        src="https://sketchfab.com/models/f6ba825a43b146a9b669934a4e1fd529/embed">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <div class="embed-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/ziyfRkwm-sk" title="Aston Martin F1 video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <h2 class="section-title">Key Milestones</h2>
+        <div class="timeline-container">
+            <div class="milestone">
+                <h3>1922</h3>
+                <p>Aston Martin founded and begins building a racing legacy.</p>
+            </div>
+            <div class="milestone">
+                <h3>1959</h3>
+                <p>Le Mans victory cements Aston Martin’s endurance heritage.</p>
+            </div>
+            <div class="milestone">
+                <h3>2021</h3>
+                <p>Aston Martin returns to F1 under the modern team identity.</p>
+            </div>
+            <div class="milestone">
+                <h3>2023+</h3>
+                <p>Major performance rise and continued investment in facilities and development.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="drivers">
+        <h2 class="section-title">Drivers</h2>
+
+        <div class="grid">
+            <div class="driver-card">
+                <img src="images/fernando.png" alt="Fernando Alonso">
+                <h3>Fernando Alonso</h3>
+                <p>Two-time World Champion & Aston Martin driver</p>
+            </div>
+
+            <div class="driver-card">
+                <img src="images/stroll.png" alt="Lance Stroll">
+                <h3>Lance Stroll</h3>
+                <p>Aston Martin driver</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-cars" data-watermark="AMR-20XX">
+        <div class="all-cars-title">
+            <span class="all-cars-bar"></span>
+            <h2>ALL CARS</h2>
+        </div>
+
+        <div class="car-controls">
+            <button id="prevCar">◀</button>
+            <button id="nextCar">▶</button>
+        </div>
+
+        <div id="carFrame" class="car-frame"></div>
+    </section>
+
+    <script src="./astonmartin.js"></script>
+</body>
+
+</html>
