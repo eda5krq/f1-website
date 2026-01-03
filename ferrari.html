@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scuderia Ferrari | Driven by Passion</title>
+
+    <link rel="stylesheet" href="./ferraristyle.css" />
+</head>
+
+<body>
+    <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
+
+    <header>
+        <div>
+            <h1>
+                SCUDERIA <span style="color:#fff;">FERRARI</span> <span style="color:#D40000;">F1</span>
+            </h1>
+            <p>Driven by Passion & Performance</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2 class="section-title">Team Origins</h2>
+        <p>
+            Scuderia Ferrari is Formula 1’s most iconic team—defined by heritage, innovation, and relentless racing
+            spirit.
+            Since its first Grand Prix entry, Ferrari has combined Italian design and engineering with world-class
+            competition,
+            becoming a symbol of passion and performance across generations.
+        </p>
+
+        <div class="grid">
+            <div class="sketchfab-embed-wrapper">
+                <iframe title="Ferrari F1 2019 (3D)" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                    webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share width="560" height="315"
+                    src="https://sketchfab.com/models/1b050bffe4e749b586b4782ee7ff4fd0/embed?autostart=1&ui_infos=0&ui_watermark=0&ui_help=0&ui_settings=0">
+                </iframe>
+            </div>
+
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/X-no8kz7sSU"
+                title="Scuderia Ferrari Video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+    </section>
+
+    <section class="timeline">
+        <h2 class="section-title">Key Milestones</h2>
+        <div class="timeline-container">
+            <div class="milestone">
+                <h3>1950</h3>
+                <p>Ferrari competes in the first ever Formula 1 World Championship season.</p>
+            </div>
+            <div class="milestone">
+                <h3>1975–1979</h3>
+                <p>Championship success returns with legendary cars and drivers.</p>
+            </div>
+            <div class="milestone">
+                <h3>2000–2004</h3>
+                <p>Dominant era with multiple Drivers’ and Constructors’ Championships.</p>
+            </div>
+            <div class="milestone">
+                <h3>2022+</h3>
+                <p>A modern resurgence focused on innovation, speed, and returning to the top.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="drivers">
+        <h2 class="section-title">Champions & Drivers</h2>
+        <div class="grid">
+            <div class="driver-card">
+                <img src="images/leclerc.png" alt="Charles Leclerc">
+                <h3>Charles Leclerc</h3>
+                <p>Lead driver of Ferrari’s modern era</p>
+            </div>
+            <div class="driver-card">
+                <img src="images/hamilton.png" alt="Lewis Hamilton">
+                <h3>Lewis Hamilton</h3>
+                <p>Seven-time World Champion and legendary Formula 1 driver</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="all-cars" data-watermark="SF-24">
+        <div class="all-cars-title">
+            <span class="all-cars-bar"></span>
+            <h2>ALL CARS</h2>
+        </div>
+
+        <div class="car-controls">
+            <button id="prevCar">◀</button>
+            <button id="nextCar">▶</button>
+        </div>
+
+        <div id="carFrame" class="car-frame">
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./ferrari.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>
