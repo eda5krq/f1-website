@@ -4,201 +4,113 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MoneyGram Haas F1 Team</title>
+    <title>Haas F1 Team | Power & Precision</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #0f0f0f;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
-                url('images/haascar.png') center/cover no-repeat;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            margin-top: 15px;
-            color: #ddd;
-        }
-
-        section {
-            padding: 80px 8%;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            border-left: 6px solid #e10600;
-            padding-left: 15px;
-        }
-
-        .about p {
-            max-width: 900px;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .timeline {
-            background: #141414;
-        }
-
-        .milestone {
-            background: #1c1c1c;
-            padding: 30px;
-            border-radius: 14px;
-            border-top: 4px solid #e10600;
-            transition: 0.3s;
-        }
-
-        .milestone:hover {
-            transform: translateY(-5px);
-        }
-
-        .drivers {
-            text-align: center;
-        }
-
-        .driver-card {
-            background: #1c1c1c;
-            padding: 30px;
-            border-radius: 16px;
-            transition: 0.3s;
-        }
-
-        .driver-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .driver-card img {
-            width: 100%;
-            border-radius: 12px;
-        }
-
-        .fotot {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-        }
-
-        .bg-text {
-            position: absolute;
-            font-size: 220px;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.05);
-        }
-
-        .car-img {
-            width: 800px;
-            z-index: 2;
-        }
-
-        footer {
-            background: #000;
-            padding: 30px;
-            text-align: center;
-            color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="hassf1.css" />
 </head>
 
 <body>
-
+    <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
     <header>
         <div>
-            <h1><span style="color:#e10600;">HAAS</span> F1 TEAM</h1>
-            <p>American Power in Formula 1</p>
+            <h1>
+                HAAS <span style="color:#fff;">F1</span> <span style="color:#B60000;">TEAM</span>
+            </h1>
+            <p>American Power on the F1 Grid</p>
         </div>
     </header>
 
     <section class="about">
         <h2 class="section-title">Team Origins</h2>
         <p>
-            The Haas F1 Team entered Formula 1 in 2016, becoming the first American constructor in decades.
-            Founded by Gene Haas, the team is known for its efficient approach, Ferrari partnership,
-            and strong presence on the global motorsport stage.
+            Haas F1 Team is the first American-led Formula 1 team in the modern era.
+            Founded by Gene Haas, the team entered Formula 1 with a bold vision:
+            efficiency, engineering focus, and competitive spirit on the world stage.
         </p>
-    </section>
+
+        <div class="grid">
+             <div class="sketchfab-embed-wrapper">
+                 <iframe
+                  width="560"
+                  height="315"
+                  title="Haas Showcar - Formulaspeed"
+                 frameborder="0" 
+                 allow="autoplay; fullscreen; xr-spatial-tracking"
+                 xr-spatial-tracking
+                 execution-while-out-of-viewport
+                 execution-while-not-rendered
+                 web-share
+                 src="https://sketchfab.com/models/6c72829847c648baafc86ab362faa8b6/embed">
+                 </iframe>
+              </div>
+           
+            
+            <div class="embed-card video-embed">
+            <iframe
+             src="https://www.youtube-nocookie.com/embed/lcOng-mooTU"
+             title="YouTube video player"
+             frameborder="0"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+             allowfullscreen>
+              </iframe>
+            </div>
+        </section>
+
 
     <section class="timeline">
         <h2 class="section-title">Key Milestones</h2>
-        <div class="grid">
+        <div class="timeline-container">
             <div class="milestone">
                 <h3>2016</h3>
-                <p>Haas F1 Team debuts in Formula 1.</p>
+                <p>Haas F1 Team debuts in Formula 1 with strong points finishes.</p>
             </div>
             <div class="milestone">
                 <h3>2018</h3>
-                <p>Best season finish – 5th in Constructors’ Championship.</p>
+                <p>Best Constructors’ Championship result: 5th place.</p>
             </div>
             <div class="milestone">
                 <h3>2022</h3>
-                <p>Strong comeback with new regulations.</p>
+                <p>Major comeback with new regulations and fresh lineup.</p>
             </div>
             <div class="milestone">
-                <h3>2023–2024</h3>
-                <p>Continued development and midfield battles.</p>
+                <h3>2024+</h3>
+                <p>Focused rebuild aiming for midfield competitiveness.</p>
             </div>
         </div>
     </section>
 
-    <section class="drivers">
-    <h2 class="section-title">Drivers</h2>
     <div class="grid">
-        <div class="driver-card">
-            <img src="Esteban_Ocon (1).png" alt="Esteban Ocon">
-            <h3>Esteban Ocon</h3>
-            <p>Experienced Formula 1 driver</p>
-        </div>
-        <div class="driver-card">
-            <img src="Oliver-Bearman.png" alt="Oliver Bearman">
-            <h3>Oliver Bearman</h3>
-            <p>Rising British talent in F1</p>
-        </div>
-    </div>
-</section>
+  <div class="driver-card">
+    <img src="Esteban_Ocon.png" alt="Esteban Ocon">
+    <h3>Esteban Ocon</h3>
+    <p>Esteban Ocon is a Haas F1 driver known for his consistency and strong racecraft.</p>
+  </div>
 
-    <section>
-        <h2 class="section-title">Car</h2>
-        <div class="fotot">
-            <h1 class="bg-text">VF-24</h1>
-            <img src="hassF1.png" alt="Haas F1 car" class="car-img">
+  <div class="driver-card">
+    <img src="Oliver-Bearman.png" alt="Oliver Bearman">
+    <h3>Oliver Bearman</h3>
+    <p>Oliver Bearman is a rising talent in Formula 1 and part of Haas’ future-focused lineup.</p>
+  </div>
+</div>
+
+
+    <section class="all-cars" data-watermark="VF-24">
+        <div class="all-cars-title">
+            <span class="all-cars-bar"></span>
+            <h2>ALL CARS</h2>
+        </div>
+
+        <div class="car-controls">
+            <button id="prevCar">◀</button>
+            <button id="nextCar">▶</button>
+        </div>
+
+        <div id="carFrame" class="car-frame">
         </div>
     </section>
 
-    <footer>
-        © 2025 MoneyGram Haas F1 Team – Student Project
-    </footer>   
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./haas.js"></script>
+</body>
+
+</html>
