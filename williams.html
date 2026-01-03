@@ -6,22 +6,24 @@
   <title>Williams Racing | Legacy of Speed</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="williams.css">
+  
   <style>
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #071a2f;
+      background: #e9eeef ;
       color: #ffffff;
-      line-height: 1.6;
+      line-height: 1.9;
     }
 
-    /* ===== HEADER ===== */
+
     header {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-                  url('images/williams-car.png') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -32,34 +34,42 @@
       font-size: 4rem;
       font-weight: 900;
       letter-spacing: 4px;
+      transition: transform 0.3s ease;
     }
+      
+      header div { transition: transform 0.3s ease; }
+      header div:hover { transform: scale(1.03); }
 
     header p {
       font-size: 1.4rem;
       margin-top: 15px;
-      color: #e0e0e0;
+      color: #0c0146;
+    }
+     @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    /* ===== SECTIONS ===== */
     section {
-      padding: 80px 8%;
+      padding: 60px ;
     }
 
     .section-title {
       font-size: 2.5rem;
       margin-bottom: 30px;
       text-transform: uppercase;
-      border-left: 6px solid #00a3e0;
+      border-left: 6px solid #1A6598 ;
       padding-left: 15px;
+      color: black ;
     }
 
     .about p {
       max-width: 900px;
       font-size: 1.1rem;
-      color: #ddd;
+      color: #1A6598 ;
     }
 
-    /* ===== GRID ===== */
+    
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -71,21 +81,23 @@
       width: 100%;
       border-radius: 14px;
     }
+     
 
-    /* ===== TIMELINE ===== */
-    .timeline {
-      background: #0b1f38;
+      .timeline {
+      background: #6e7d82;
+      padding: 150px ;
     }
 
     .timeline-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
+      gap: 30px;
     }
-
+    
     .milestone {
       background: #0f2747;
-      padding: 30px;
+      padding: 40px;
+      margin-top: 40px;
       border-radius: 14px;
       border-top: 4px solid #00a3e0;
       transition: 0.3s;
@@ -95,9 +107,9 @@
       transform: translateY(-6px);
     }
 
-    /* ===== DRIVERS ===== */
+    
     .drivers {
-      text-align: center;
+      text-align: left;
     }
 
     .driver-card {
@@ -112,41 +124,91 @@
     }
 
     .driver-card h3 {
-      margin-top: 15px;
+      margin-top: 20px;
     }
 
-    /* ===== CARS ===== */
-    .fotot {
+      .all-cars{
+  position: relative;
+  padding: 60px;
+  padding-bottom: 0;
+  background: #505051 ;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+
+    .all-cars::before{
+  content: attr(data-watermark);
+  position: absolute;
+  left: 50%;
+  top: 60%;                     
+  transform: translate(-50%, -50%);
+  font-size: 22vw;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: rgba(6, 0, 17, 0.08);
+  z-index: 0;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+
+    }
+
+    .all-cars-title{
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 50px;
-    }
-
-    .bg-text {
-      position: absolute;
-      font-size: 220px;
-      font-weight: 900;
-      color: rgba(255,255,255,0.06);
-      z-index: 1;
-      pointer-events: none;
-      animation: pulse 4s infinite ease-in-out;
-    }
-
-    .car-img {
-      width: 850px;
       z-index: 2;
-      transition: opacity 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 100px;
+      color: black ;
     }
+
+    .all-cars-title h2{
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .all-cars-bar{
+      width: 10px;
+      height: 56px;
+      background: #1A6598 ;
+      border-radius: 2px;
+    }
+
+   /* Fixed frame that NEVER changes size */
+.car-frame{
+ position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  transform:
+    translateX(-50%)
+    translate(var(--x, 0px), var(--y, 0px))
+    scale(var(--s, 1));
+
+  transform-origin: bottom center;
+
+  width: min(900px, 75vw);
+  height: 460px;
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
+  z-index: 1;
+  pointer-events: none;
+}
 
     button {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      border: 2px solid white;
+      border: 2px solid rgb(1, 4, 16);
       background: none;
-      color: white;
+      color: rgb(0, 1, 7);
       cursor: pointer;
       transition: 0.3s;
     }
@@ -154,23 +216,62 @@
     button:hover {
       transform: scale(1.1);
     }
-
-    footer {
-      background: #000;
-      padding: 30px;
-      text-align: center;
-      color: #aaa;
-    }
-
+  
     @keyframes pulse {
       0%,100% { transform: scale(1); }
       50% { transform: scale(1.08); }
     }
+     .car-controls {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.car-controls button {
+  background: #aeb4b3;
+  border: none;
+  color: #000;
+  font-size: 1.4rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.car-controls button:hover {
+  background: #4b4e4d;
+}
+carimage{
+  height: 200px;
+  animation: carFade 1s ease forwards;
+}
+@keyframes carFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  @media (max-width: 900px){
+      header h1 { font-size: 2.8rem; }
+      header p { font-size: 1.2rem; }
+      .section-title { font-size: 2rem; }
+      .all-cars { min-height: 420px; }
+      .all-cars-title h2 { font-size: 2rem; }
+      .all-cars-car { width: 500vw; }
+    }
+    
+    
   </style>
 </head>
 
 <body>
-
+ <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
 <header>
   <div id="home ">
     <h1>WILLIAMS <span style="color:#00a3e0;">RACING</span></h1>
@@ -188,14 +289,29 @@
   </p>
 
   <div class="grid">
-    <img src="images/williams-old.png" alt="Williams history">
-    <iframe width="100%" height="315"
-      src="https://www.youtube.com/embed/6U0K6jX1ZRo"
-      title="Williams Racing Documentary"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
+   <div class="sketchfab-embed-wrapper">
+  <iframe
+  width="560"
+  height="315"
+      title="Williams FW43B"
+    frameborder="0"
+    allow="autoplay; fullscreen; xr-spatial-tracking"
+    xr-spatial-tracking
+    execution-while-out-of-viewport
+    execution-while-not-rendered
+    web-share
+    src="https://sketchfab.com/models/a2c3e0b054bb4c41bedf3b3e786d29da/embed?autostart=1&ui_infos=0&ui_watermark=0&ui_help=0">
+  </iframe>
+</div>
+
+<a
+  href="https://www.youtube.com/watch?v=70Yd-jMqPGE"
+  target="_blank"
+  class="fake-video"
+>
+  <div class="play-btn">▶</div>
+</a>
+
 </section>
 
 <section class="timeline">
@@ -226,65 +342,32 @@
 
   <div class="grid">
     <div class="driver-card">
-      <img src="drivers/mansell.png" alt="Nigel Mansell">
+      <img src="mansell.png" alt="Nigel Mansell">
       <h3>Nigel Mansell</h3>
-      <p>World Champion 1992</p>
+      <p>Nigel Mansell is a Williams F1 icon and the 1992 World Champion.</p>
     </div>
 
     <div class="driver-card">
-      <img src="drivers/alonso.png" alt="Fernando Alonso">
+      <img src="alonso.png" alt="Fernando Alonso">
       <h3>Fernando Alonso</h3>
-      <p>Former Williams Driver</p>
+      <p>Fernando Alonso is a legendary Formula 1 driver known for his exceptional talent and experience.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <h2 class="section-title">Cars</h2>
+<section class="all-cars">
+  <h2 class="all-cars-title">ALL CARS</h2>
 
-  <button id="back">🡨</button>
-  <button id="forward">🡪</button>
-
-  <div class="fotot">
-    <h1 class="bg-text">FW46</h1>
-    <img src="cars/fw46.png" class="car-img" alt="Williams car">
+  <div class="car-controls">
+    <button id="prevCar">◀</button>
+    <button id="nextCar">▶</button>
   </div>
+
+  <div id="carFrame" class="car-frame"></div>
 </section>
 
-<footer>
-  © 2026 Williams Racing Fan Page
-</footer>
 
-<script>
-const cars = [
-  { name: "FW46", img: "cars/fw46.png" },
-  { name: "FW45", img: "cars/fw45.png" },
-  { name: "FW44", img: "cars/fw44.png" }
-];
 
-let index = 0;
-const carImg = document.querySelector(".car-img");
-const bgText = document.querySelector(".bg-text");
-
-document.getElementById("back").onclick = () => {
-  index = (index - 1 + cars.length) % cars.length;
-  updateCar();
-};
-
-document.getElementById("forward").onclick = () => {
-  index = (index + 1) % cars.length;
-  updateCar();
-};
-
-function updateCar() {
-  carImg.style.opacity = 0;
-  setTimeout(() => {
-    carImg.src = cars[index].img;
-    bgText.textContent = cars[index].name;
-    carImg.style.opacity = 1;
-  }, 300);
-}
-</script>
 <script src="williams.js"></script>
 
 </body>
