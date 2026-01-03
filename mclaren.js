@@ -1,33 +1,42 @@
 // Array of McLaren cars
 const cars = [
+    { name: "MCL34", image: "mcl34.png" },
+    { name: "MCL35", image: "mcl35.png" },
     { name: "MCL36", image: "mcl36.png" },
-    { name: "MCL38", image: "mcl38.png" }
+    { name: "MCL38", image: "mcl38.png" },
+
 ];
 
-let currentIndex = 1; // Start with MCL38, which is index 1
+let currentIndex = 0;
 
-const backButton = document.getElementById('back');
-const forwardButton = document.getElementById('forward');
-const carImg = document.querySelector('.car-img');
-const bgText = document.querySelector('.bg-text');
+const backButton = document.getElementById("back");
+const forwardButton = document.getElementById("forward");
+const carImg = document.querySelector(".car-img");
+const bgText = document.querySelector(".bg-text");
 
-// Function to update the display
 function updateCar() {
-    carImg.src = cars[currentIndex].image;
-    carImg.alt = cars[currentIndex].name;
-    bgText.textContent = cars[currentIndex].name;
+    carImg.classList.add("fade");
+
+    setTimeout(() => {
+        carImg.src = cars[currentIndex].image;
+        carImg.alt = cars[currentIndex].name;
+        bgText.textContent = cars[currentIndex].name;
+
+        carImg.offsetHeight;
+
+        carImg.classList.remove("fade");
+    }, 400);
 }
 
-// Event listeners
-backButton.addEventListener('click', () => {
+backButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + cars.length) % cars.length;
     updateCar();
 });
 
-forwardButton.addEventListener('click', () => {
+forwardButton.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % cars.length;
     updateCar();
 });
 
-// Initialize
+
 updateCar();
