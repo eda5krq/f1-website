@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercedes-AMG PETRONAS Formula One Team | Driven by Performance</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0B162F;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: ease 0.3s;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    header div { transition: transform 0.3s ease; }
+    header div:hover { transform: scale(1.03); }
+
+    header p {
+      font-size: 1.5rem;
+      margin-top: 15px;
+      color: #f1f1f1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    section { padding: 80px 8%; }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      border-left: 6px solid #00D2BE;
+      padding-left: 15px;
+    }
+    .about p {
+      max-width: 900px;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .timeline { background: #111217; }
+
+    .timeline-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .milestone {
+      background: #1a1b22;
+      padding: 30px;
+      border-radius: 14px;
+      border-top: 4px solid #00D2BE;
+      transition: all 0.3s ease;
+    }
+
+    .milestone:hover { color: #fff; transform: translateY(-5px); }
+
+    .milestone h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .milestone p { color: #ccc; }
+
+    .drivers { text-align: center; }
+
+    .driver-card {
+      background: #1a1b22;
+      padding: 30px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+     .driver-card:hover { color: #fff; transform: translateY(-5px); }
+
+    .driver-card img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .driver-card h3 { margin-top: 15px; font-size: 1.4rem; }
+
+    footer {
+      background: #000;
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .all-cars{
+  position: relative;
+  padding: 30px;
+  padding-bottom: 0;
+  background: #0B162F;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+
+    .all-cars::before{
+  content: attr(data-watermark);
+  position: absolute;
+  left: 50%;
+  top: 60%;                     
+  transform: translate(-50%, -50%);
+  font-size: 22vw;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: rgba(255,255,255,0.08);
+  z-index: 0;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+
+    }
+
+    .all-cars-title{
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .all-cars-title h2{
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .all-cars-bar{
+      width: 10px;
+      height: 56px;
+      background: #00D2BE;
+      border-radius: 2px;
+    }
+
+   /* Fixed frame that NEVER changes size */
+.car-frame{
+ position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  transform:
+    translateX(-50%)
+    translate(var(--x, 0px), var(--y, 0px))
+    scale(var(--s, 1));
+
+  transform-origin: bottom center;
+
+  width: min(900px, 75vw);
+  height: 460px;
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
+  z-index: 1;
+  pointer-events: none;
+}
+
+#home {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: white;
+        border: solid 2px #00D2BE;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s, color 0.3s;
+        z-index: 10;
+    }
+    #home:hover {
+        background-color: #00D2BE;
+        color: #0B162F;
+        transform:scale(1.03);
+    }
+
+   .car-controls {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.car-controls button {
+  background: #00D2BE;
+  border: none;
+  color: #000;
+  font-size: 1.4rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.car-controls button:hover {
+  background: #00b8a6;
+}
+carimage{
+  height: 200px;
+  animation: carFade 1s ease forwards;
+}
+@keyframes carFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  @media (max-width: 900px){
+      header h1 { font-size: 2.8rem; }
+      header p { font-size: 1.2rem; }
+      .section-title { font-size: 2rem; }
+      .all-cars { min-height: 420px; }
+      .all-cars-title h2 { font-size: 2rem; }
+      .all-cars-car { width: 500vw; }
+    }
+
+    
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+  <a href="homepage.html"><button type="button" id="home">Back to Home</button></a>
+
+    <div>
+    <h1>
+      MERCEDES-AMG <span style="color:#C9CDD3;">PETRONAS</span> <span style="color:#00D2BE;">F1</span>
+    </h1>
+    <p>Driven by Precision & Performance</p>
+  </div>
+</header>
+
+<section class="about">
+  <h2 class="section-title">Team Origins</h2>
+  <p>
+    Mercedes has a legendary Formula 1 history, returning as a works team in the modern era and becoming a benchmark for
+    engineering excellence. Known for innovation, relentless performance, and championship-winning drivers, Mercedes-AMG
+    PETRONAS Formula One Team defined a generation of Formula 1 success.
+  </p>
+
+  <div class="grid">
+
+    <div class="sketchfab-embed-wrapper">
+      <iframe
+        title="Mercedes AMG Petronas W14 2023 (3D)"
+        frameborder="0"
+        allowfullscreen
+        mozallowfullscreen="true"
+        webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        xr-spatial-tracking
+        execution-while-out-of-viewport
+        execution-while-not-rendered
+        web-share
+        width="560"
+        height="315"
+        src="https://sketchfab.com/models/f210e49637fd49bfa52860d2e17dcf50/embed?autostart=1&ui_infos=0&ui_watermark=0&ui_help=0&ui_settings=0">
+      </iframe>
+    </div>
+    
+   
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/Kfp4pMAhsUs"
+      title="Our Home: Mercedes F1 Factory Tour!"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<section class="timeline">
+  <h2 class="section-title">Key Milestones</h2>
+  <div class="timeline-container">
+    <div class="milestone">
+      <h3>1954–1955</h3>
+      <p>Mercedes returns and wins with Juan Manuel Fangio in a historic era.</p>
+    </div>
+    <div class="milestone">
+      <h3>2010</h3>
+      <p>Mercedes returns as a factory team in the modern era.</p>
+    </div>
+    <div class="milestone">
+      <h3>2014–2020</h3>
+      <p>An era of dominance with multiple Constructors’ and Drivers’ Championships.</p>
+    </div>
+    <div class="milestone">
+      <h3>2021+</h3>
+      <p>Continued innovation, evolution, and pursuit of championship performance.</p>
+    </div>
+  </div>
+
+    <section class="drivers">
+  <h2 class="section-title">Champions & Drivers</h2>
+  <div class="grid">
+    <div class="driver-card">
+      <img src="lewis.png" alt="Lewis Hamilton">
+      <h3>Lewis Hamilton</h3>
+      <p>Multiple-time World Champion with Mercedes</p>
+    </div>
+    <div class="driver-card">
+      <img src="rosberg.png" alt="Nico Rosberg">
+      <h3>Nico Rosberg</h3>
+      <p>World Champion & key figure of the modern era</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="all-cars" data-watermark="W14">
+  <div class="all-cars-title">
+    <span class="all-cars-bar"></span>
+    <h2>ALL CARS</h2>
+  </div>
+
+  <div class="car-controls">
+    <button id="prevCar">◀</button>
+    <button id="nextCar">▶</button>
+  </div>
+
+  <div id="carFrame" class="car-frame"></div>
+
+
+</section>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="mercedes.js"></script>
+</body>
