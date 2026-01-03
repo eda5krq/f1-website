@@ -45,7 +45,6 @@
             overflow: hidden;
         }
 
-        /* smooth blend into next section */
         header::after {
             content: "";
             position: absolute;
@@ -105,7 +104,6 @@
             margin-bottom: 30px;
             text-transform: uppercase;
             border-left: 6px solid #D40000;
-            /* Ferrari red */
             padding-left: 15px;
         }
 
@@ -149,7 +147,6 @@
             padding: 30px;
             border-radius: 14px;
             border-top: 4px solid #D40000;
-            /* Ferrari red */
             transition: all 0.3s ease;
         }
 
@@ -229,8 +226,8 @@
             overflow: hidden;
             min-height: 520px;
         }
-        
-        
+
+
 
 
         .all-cars::before {
@@ -239,21 +236,15 @@
             left: 50%;
             top: 55%;
             transform: translate(-50%, -50%) scaleX(1.1);
-
             font-size: clamp(140px, 18vw, 260px);
             font-weight: 900;
             letter-spacing: -0.06em;
             line-height: 0.85;
             white-space: nowrap;
-
             color: rgba(255, 255, 255, 0.14);
-            /* 🔼 more visible */
-
             text-shadow:
                 0 0 40px rgba(212, 0, 0, 0.25),
-                /* Ferrari red glow */
                 0 0 80px rgba(212, 0, 0, 0.15);
-
             z-index: 0;
             user-select: none;
             pointer-events: none;
@@ -263,7 +254,7 @@
             color: rgba(255, 255, 255, 0.18);
         }
 
-        
+
 
 
 
@@ -286,11 +277,9 @@
             width: 10px;
             height: 56px;
             background: #D40000;
-            /* Ferrari red */
             border-radius: 2px;
         }
 
-        /* Fixed frame that NEVER changes size */
         .car-frame {
             position: absolute;
             left: 50%;
@@ -313,7 +302,6 @@
 
         .car-frame {
             z-index: 3;
-            /* car above watermark */
             opacity: 1;
         }
 
@@ -397,13 +385,10 @@
 
             #carFrame {
                 outline: 3px solid rgba(0, 255, 0, 0.5);
-                /* debug: see the box */
                 z-index: 999;
-                /* ensure it's on top */
                 opacity: 1 !important;
-                /* ensure not hidden */
                 background-position: center center;
-                /* easier to see */
+
             }
 
 

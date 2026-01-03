@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         frame.style.backgroundImage = `url("${src}")`;
         section.setAttribute("data-watermark", cars[currentIndex].watermark);
 
-        // debug
         console.log("Set car to:", src);
         console.log("Computed bg:", getComputedStyle(frame).backgroundImage);
     }
