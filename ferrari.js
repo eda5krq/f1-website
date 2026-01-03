@@ -12,9 +12,19 @@ $(document).ready(function () {
   const $section = $(".all-cars");
 
   function updateCar() {
+  $frame.addClass("fade-out");
+
+  // force reflow so opacity change is registered
+  $frame[0].offsetHeight;
+
+  setTimeout(() => {
     $frame.css("background-image", `url(${cars[currentIndex].image})`);
     $section.attr("data-watermark", cars[currentIndex].watermark);
-  }
+    $frame.removeClass("fade-out");
+  }, 450);
+}
+
+
 
   $("#nextCar").on("click", function () {
     currentIndex = (currentIndex + 1) % cars.length;
